@@ -1,4 +1,4 @@
-from django.urls import path, re_path, include
+from django.urls import path, re_path
 from .views import IncidentListCreateView, IncidentDetailView,ActiveIncidentsMapView,IncidentGeoJSONDetailView
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view

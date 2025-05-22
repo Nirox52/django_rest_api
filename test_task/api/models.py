@@ -1,33 +1,3 @@
-# from django.contrib.gis.db import models
-#
-# class Incident(models.Model):
-#     STATUS_CHOICES = [
-#         ('active', 'Активний'),
-#         ('closed', 'Закритий'),
-#         ('in_progress', 'В роботі'),
-#     ]
-#
-#     title = models.CharField(max_length=200)
-#     # location = models.PointField(geography=True, srid=4326)  # Точка на карті
-#     location = models.PointField(
-#       geography=True,
-#       srid=4326,
-#       null=True,
-#       blank=True,
-#       default=None,
-#       verbose_name="Координаты"
-#     )
-#
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='active')
-#
-#     objects = models.Manager()  # Стандартний менеджер
-#     geo_objects = models.Manager()  # Менеджер для геоданих
-#
-#     class Meta:
-#         verbose_name = "Інцидент"
-#         verbose_name_plural = "Інциденти"
-#         ordering = ['-created_at']
 from django.contrib.gis.db import models
 from django.contrib.gis.geos import Point
 from django.core.exceptions import ValidationError
