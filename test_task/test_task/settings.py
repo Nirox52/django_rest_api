@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api',
+    'django.contrib.gis',
 ]
 
 MIDDLEWARE = [
@@ -74,13 +75,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'test_task.wsgi.application'
 
+GDAL_LIBRARY_PATH = r'C:\OSGeo4W\bin\gdal310.dll'  # Шлях до вашої версії
+OSGEO4W_ROOT = r'C:\OSGeo4W'
+os.environ['OSGEO4W_ROOT'] = OSGEO4W_ROOT
+os.environ['PATH'] = OSGEO4W_ROOT + r'\bin;' + os.environ['PATH']
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
