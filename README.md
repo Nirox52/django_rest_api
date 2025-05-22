@@ -1,5 +1,9 @@
 # Django REST API
 
+## Documentation
+localhost:8000/api/swagger/
+localhost:8000/api/redoc/
+
 ## Start postgres
 docker compose up -d
 
