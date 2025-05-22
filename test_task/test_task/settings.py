@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'django.contrib.gis',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
